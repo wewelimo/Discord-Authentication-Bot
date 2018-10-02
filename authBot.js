@@ -1,3 +1,9 @@
+//      Discord Auth Bot
+//          Made By
+//     Twitter: @washedjs
+//     Discord: Jimm¥#8069
+
+
 const Discord = require("discord.js");
 const fs = require('fs');
 const sql = require("sqlite");
@@ -115,10 +121,13 @@ async function setupDb(){
 
 // TO DO NOT WORKING ATM
 async function checkToken(){
-    schedule.scheduleJob({hour: 00, minute: 22}, async () => {
-        token = []
+    schedule.scheduleJob({hour: 18, minute: 01}, async () => {
+        //token = []
 
-        token = sql.get('SELECT token FROM users')
+        //token.push(sql.get('SELECT token FROM users'))
+        
+        //console.log(token)
+        await sql.get('SELECT token FROM users').then(function(res) { console.log(res); });
 
         await sql.get('SELECT endDate, userId FROM users WHERE token = ?', [token]).then(async (err, results) => {
             
