@@ -1,7 +1,7 @@
 //      Discord Auth Bot
 //          Made By
 //     Twitter: @washedjs
-//     Discord: Jimm¥#8069
+//     Discord: Jimm¥#9999
 
 
 const Discord = require("discord.js");
@@ -102,9 +102,11 @@ client.on('message', async message => {
                 }
             });
         }
-    } else {
+    } else if (command != 'activate' && message.channel.type == 'dm') {
         message.author.send('**In order to activate your account type the following:** _!activate YOURTOKEN_')
-    }  
+    } else {
+        return
+    }
 })
 }
 
@@ -118,24 +120,32 @@ async function setupDb(){
     }
 }
 
-
 // TO DO NOT WORKING ATM
 async function checkToken(){
-    schedule.scheduleJob({hour: 18, minute: 01}, async () => {
-        //token = []
+    schedule.scheduleJob({hour: 20, minute: 06}, async () => {
+        token = []
 
         //token.push(sql.get('SELECT token FROM users'))
         
         //console.log(token)
-        await sql.get('SELECT token FROM users').then(function(res) { console.log(res); });
-
-        await sql.get('SELECT endDate, userId FROM users WHERE token = ?', [token]).then(async (err, results) => {
-            
+        await sql.get('SELECT token, endDate FROM users').then(function(res) { token = res });
+        //token = token.split(' ')[1]
+        console.log(token)
+        await sql.get('SELECT endDate FROM users WHERE token = ?', [token]).then(function (err, dates) {
             if (err) throw err;
-            //if (endDate < moment.format('LLL')) {
+
+            console.log(dates);
+
+            if (dates <  moment().format('LLL')) {
+                console.log("token scaduto")
+            }
+        })
+        
+    })
+
                 //var role = client.guilds.get(config.serverId).roles.find(role => role.name === config.roleName);
                 //client.guilds.get(config.serverId).members.get(message.author.id).removeRole(role);
             //}
-        })           
-    });
+        //})           
+    //});
 }
