@@ -18,6 +18,7 @@ For any issue feel free to contact me.
 - Use this link to invite the bot inside your Discord server: 
 - https://discordapp.com/oauth2/authorize?&client_id=YOUR_CLIENT_ID_HERE&scope=bot&permissions=8
 
-- Once the bot is inside your server, and you wrote all the infos in the config file you can run the command " node authBot.js "
+- Once the bot is inside your server, and you wrote all the infos in the config file you can run the command 
+```node authBot.js```
 
 - Last step copy and paste the tokens or email you sent to your customers
