@@ -24,3 +24,6 @@ node authBot.js
 ```
 
 - Last step copy and paste the tokens or email you sent to your customers
+
+## To Do
+- [] Add function to check the token expiration
