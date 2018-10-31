@@ -6,7 +6,7 @@ Donations: paypal.me/pools/c/88o3x0PwHD
 For any issue feel free to contact me.
 
 
-Installation Guide
+## Installation Guide
 
 Rename configtest.json to config.json
 
