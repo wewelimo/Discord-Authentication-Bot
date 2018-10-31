@@ -8,7 +8,7 @@ For any issue feel free to contact me.
 
 ## Installation Guide
 
-Rename configtest.json to config.json
+- Rename configtest.json to config.json
 
 - Go to this link: https://discordapp.com/developers/applications/
 - Create a new application 
