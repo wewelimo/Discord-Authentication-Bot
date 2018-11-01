@@ -8,6 +8,12 @@ For any issue feel free to contact me.
 
 ## Installation Guide
 
+###Install nodejs on ubuntu
+```
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
 - Rename configtest.json to config.json
 
 - Go to this link: https://discordapp.com/developers/applications/
